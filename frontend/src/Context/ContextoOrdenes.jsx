@@ -8,41 +8,36 @@ export const useOrdenes = () => useContext(OrdenesContext);
 export const OrdenesProvider = ({ children }) => {
   const [ordenes, setOrdenes] = useState([]); // Initialize as an empty array
   const [error, setError] = useState(null); // To store any errors
+  const API_URL =  'http://localhost:3000/ordenes';
 
   useEffect(() => {
     const fetchOrdenes = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/ordenes'); // Adjust URL as needed
-        console.log('Response:', response);
-
+        const response = await axios.get(API_URL);
         const key = "JSON_F52E2B61-18A1-11d1-B105-00805F49916B";
-        if (response.data) {
-          console.log('Response Data:', response.data);
-        } else {
-          console.log('No response data');
-        }
 
         if (response.data && response.data[key]) {
-          console.log('JSON Key Found:', response.data[key]);
           const parsedData = JSON.parse(response.data[key]);
-          console.log('Parsed Data:', parsedData);
           setOrdenes(parsedData.Datos || []);
         } else {
-          console.log('No valid data found');
+          console.warn('Invalid or missing data key in response:', response.data);
           setOrdenes([]);
         }
       } catch (error) {
         console.error('Error fetching orders:', error);
-        setError(error.message);
+        setError(error.response?.data?.message || error.message || 'Error fetching orders.');
       }
     };
 
     fetchOrdenes();
-  }, []);
+  }, [API_URL]);
 
   const actualizarEstadoOrden = async (id, nuevoEstado) => {
     try {
-      const ordenesActualizadas = await axios.put('http://localhost:3000/ordenes', { Datos: [{ idOrden: id, estado: nuevoEstado }] });
+      const ordenesActualizadas = await axios.put(API_URL, {
+        Datos: [{ idOrden: id, estado: nuevoEstado }],
+      });
+
       const resultado = ordenesActualizadas.data;
 
       if (resultado.Estado === 'Completado') {

@@ -8,7 +8,12 @@ const OrdersTable = ({ orders }) => {
         <TableHead>
           <TableRow>
             <TableCell>ID</TableCell>
-            <TableCell>Nombre</TableCell>
+            <TableCell>Fecha de Creación</TableCell>
+            <TableCell>Dirección de Envío</TableCell>
+            <TableCell>Teléfono</TableCell>
+            <TableCell>Correo Electrónico</TableCell>
+            <TableCell>Fecha de Envío</TableCell>
+            <TableCell>Total</TableCell>
             <TableCell>Estado</TableCell>
           </TableRow>
         </TableHead>
@@ -16,8 +21,13 @@ const OrdersTable = ({ orders }) => {
           {orders.map((orden) => (
             <TableRow key={orden.idOrden}>
               <TableCell>{orden.idOrden}</TableCell>
-              <TableCell>{orden.nombre}</TableCell>
-              <TableCell>{orden.estado}</TableCell>
+              <TableCell>{new Date(orden.fecha_creacion).toLocaleString()}</TableCell>
+              <TableCell>{orden.direccion_envio}</TableCell>
+              <TableCell>{orden.telefono}</TableCell>
+              <TableCell>{orden.correo_electronico}</TableCell>
+              <TableCell>{orden.fecha_envio}</TableCell>
+              <TableCell>Q{orden.total_orden.toFixed(2)}</TableCell>
+              <TableCell>{orden.id_estado === 1 ? 'Pendiente' : 'Completado'}</TableCell>
             </TableRow>
           ))}
         </TableBody>
