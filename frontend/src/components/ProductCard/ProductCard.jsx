@@ -22,7 +22,7 @@ export default function MultiActionAreaCard({ producto, handleAddToCart }) {
       <CardActionArea onClick={handleNavigate}>
         <CardMedia
           component="img"
-          height="140"
+          height="300"
           image={`http://localhost:3000/productos/imagenes/${producto.foto}`} // Usar imagen del producto dinámicamente
           alt={producto.nombre_producto || 'Imagen del Producto'} // Usar el nombre del producto como texto alternativo si está disponible
         />

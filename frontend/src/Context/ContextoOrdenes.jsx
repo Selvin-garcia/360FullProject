@@ -9,6 +9,9 @@ export const OrdenesProvider = ({ children }) => {
   const [ordenes, setOrdenes] = useState([]); // Initialize as an empty array
   const [error, setError] = useState(null); // To store any errors
   const API_URL =  'http://localhost:3000/ordenes';
+  const API_URL_Actualizar =  'http://localhost:3000/ordenes/actualizar';
+  
+  
 
   useEffect(() => {
     const fetchOrdenes = async () => {
@@ -34,7 +37,7 @@ export const OrdenesProvider = ({ children }) => {
 
   const actualizarEstadoOrden = async (id, nuevoEstado) => {
     try {
-      const ordenesActualizadas = await axios.put(API_URL, {
+      const ordenesActualizadas = await axios.put(API_URL_Actualizar, {
         Datos: [{ idOrden: id, estado: nuevoEstado }],
       });
 

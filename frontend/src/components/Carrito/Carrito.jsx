@@ -17,7 +17,7 @@ const Cart = ({ cartItems, onRemove, onUpdateQuantity, onCheckout }) => {
               <Card sx={{ display: 'flex', mb: 2 }}>
                 <CardMedia
                   component="img"
-                  sx={{ width: 151 }}
+                  sx={{ width: 151, height:300 }}
                   image={`http://localhost:3000/productos/imagenes/${item.foto}`}
                   alt={item.nombre_producto}
                 />

@@ -5,6 +5,7 @@ import theme from './theme';
 import { Navbar } from "./components/Navbar/Navbar";
 import PieDePagina from "./components/PieDePagina/PieDePagina";
 import Home from "./Pages/Home";
+import CategoriaAlimentosPage from "./Pages/Alimentos";
 import LoginPage from "./Pages/Login";
 import CartPage from "./Pages/Carrito";
 import OperadorPage from "./Pages/Operador";
@@ -37,6 +38,8 @@ const AppRoutes = () => {
             ) : (
               <>
                 <Route path="/home" element={<Home />} />
+                <Route path="/alimentos" element={< CategoriaAlimentosPage />} />
+
                 <Route path="/producto/:idProducto" element={<DetalleProductos />} />
                 <Route path="/cart" element={<CartPage />} /> {/* Add the CartPage route */}
                 <Route path="/checkout" element={<CheckoutPage />} />

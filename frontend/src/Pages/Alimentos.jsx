@@ -1,21 +1,20 @@
 import { Hero } from "../components/Hero/Hero";
 import { ProductsProvider } from '../Context/ProductosContexto'; // Import ProductsProvider
-import InicioProductos from "../components/InicioProductos/InicioProductos";
+import CategoriaAlimentos from "../components/CategoriaAlimentos/CategoriaAlimentos";
 import Variants from "../components/ResaltarNegocio/ResaltarNegocio";
 
 
 
 
 
-const Home = ()=> {
+const   CategoriaAlimentosPage = ()=> {
     return (
     <>
     
-    
-    <Hero/>
+  
     <Variants/>
     <ProductsProvider>  {/* Wrap your components with the provider */}
-      <InicioProductos />
+      <CategoriaAlimentos />
     </ProductsProvider>
    
 
@@ -24,4 +23,4 @@ const Home = ()=> {
     </>
     );
     }
-    export default  Home
+    export default  CategoriaAlimentosPage

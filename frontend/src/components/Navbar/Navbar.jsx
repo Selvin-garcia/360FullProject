@@ -35,8 +35,8 @@ export const Navbar = () => {
           <StyledButton component={Link} to="/" color='inherit'>
             Página Principal
           </StyledButton>
-          <StyledButton component={Link} to="/contact" color='inherit'>
-            Contacto
+          <StyledButton component={Link} to="/alimentos" color='inherit'>
+            Alimentos
           </StyledButton>
         </ButtonGroup>
         <div style={{ flexGrow: 1 }}></div> {/* This will push the cart icon to the right */}

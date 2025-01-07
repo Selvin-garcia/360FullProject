@@ -14,19 +14,27 @@ const ProductCard = ({ product }) => {
       <CardMedia
         component="img"
         alt={product.nombre_producto}
-        height="400"
-        image={`http://localhost:3000/productos/imagenes/${product.foto}`} 
+        image={`http://localhost:3000/productos/imagenes/${product.foto}`}
+        sx={{
+          height: '400px', // Adjust height as needed
+          objectFit: 'contain', // Ensures the image fits without cropping
+        }}
       />
-      
       <CardContent>
         <Typography variant="h5" gutterBottom>
           {product.nombre_producto}
         </Typography>
         <Typography variant="body2" color="textSecondary" gutterBottom>
-          Q{product.precio}
+          Precio: Q{product.precio}
         </Typography>
         <Typography variant="body2" gutterBottom>
-          {product.marca}
+          Marca: {product.marca}
+        </Typography>
+        <Typography variant="body2" gutterBottom>
+          Stock: {product.stock}
+        </Typography>
+        <Typography variant="body2" gutterBottom>
+          Codigo: {product.codigo}
         </Typography>
         <Box mt={2}>
           <Button 
@@ -34,7 +42,7 @@ const ProductCard = ({ product }) => {
             color="primary" 
             onClick={handleAddToCart} // Handle the button click
           >
-            Add to Cart
+            Agregar al carrito
           </Button>
         </Box>
       </CardContent>
