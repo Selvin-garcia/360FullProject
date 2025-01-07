@@ -50,9 +50,9 @@ const CheckoutForm = ({ onCheckout, cartItems }) => {
 
   return (
     <Box component="form" onSubmit={handleSubmit} sx={{ mt: 2 }}>
-      <Typography variant="h5" gutterBottom>Checkout</Typography>
+      <Typography variant="h5" gutterBottom>Detalles de Envío</Typography>
       <TextField
-        label="Name"
+        label="Nombre Completo"
         variant="outlined"
         fullWidth
         value={name}
@@ -61,7 +61,7 @@ const CheckoutForm = ({ onCheckout, cartItems }) => {
         sx={{ mb: 2 }}
       />
       <TextField
-        label="Email"
+        label="Correo"
         variant="outlined"
         fullWidth
         type="email"
@@ -71,7 +71,7 @@ const CheckoutForm = ({ onCheckout, cartItems }) => {
         sx={{ mb: 2 }}
       />
       <TextField
-        label="Phone"
+        label="Teléfono"
         variant="outlined"
         fullWidth
         value={phone}
@@ -80,7 +80,7 @@ const CheckoutForm = ({ onCheckout, cartItems }) => {
         sx={{ mb: 2 }}
       />
       <TextField
-        label="Address"
+        label="Dirección"
         variant="outlined"
         fullWidth
         value={address}
@@ -88,7 +88,7 @@ const CheckoutForm = ({ onCheckout, cartItems }) => {
         required
         sx={{ mb: 2 }}
       />
-      <Button type="submit" variant="contained" color="primary">Place Order</Button>
+      <Button type="submit" variant="contained" color="primary">Confirmar Orden</Button>
     </Box>
   );
 };

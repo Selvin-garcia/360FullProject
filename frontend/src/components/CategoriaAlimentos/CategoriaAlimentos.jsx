@@ -26,7 +26,7 @@ const CategoriaAlimentos = () => {
   if (error) return <p>Error: {error}</p>;
 
   return (
-    <Box sx={{ padding: 2 }}>
+    <Box sx={{ padding: 2 ,marginTop: '80px'  }} >
       <Typography variant="h4" gutterBottom>
         Productos Principales Alimentos
       </Typography>

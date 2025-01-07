@@ -12,7 +12,6 @@ const   CategoriaAlimentosPage = ()=> {
     <>
     
   
-    <Variants/>
     <ProductsProvider>  {/* Wrap your components with the provider */}
       <CategoriaAlimentos />
     </ProductsProvider>

@@ -10,13 +10,13 @@ const ProductCard = ({ product }) => {
   };
 
   return (
-    <Card>
+    <Card sx={{ mt: '80px' }}>
       <CardMedia
         component="img"
         alt={product.nombre_producto}
         image={`http://localhost:3000/productos/imagenes/${product.foto}`}
         sx={{
-          height: '400px', // Adjust height as needed
+          height: '300px', // Adjust height as needed
           objectFit: 'contain', // Ensures the image fits without cropping
         }}
       />

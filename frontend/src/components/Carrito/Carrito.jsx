@@ -8,8 +8,8 @@ const Cart = ({ cartItems, onRemove, onUpdateQuantity, onCheckout }) => {
   };
 
   return (
-    <Container maxWidth="lg">
-      <Typography variant="h4" gutterBottom>Shopping Cart</Typography>
+    <Container maxWidth="lg" sx={{ mt: '80px' }} >
+      <Typography variant="h4" gutterBottom>Carrito</Typography>
       <Grid container spacing={4}>
         {cartItems.length > 0 ? (
           cartItems.map(item => (
@@ -17,7 +17,7 @@ const Cart = ({ cartItems, onRemove, onUpdateQuantity, onCheckout }) => {
               <Card sx={{ display: 'flex', mb: 2 }}>
                 <CardMedia
                   component="img"
-                  sx={{ width: 151, height:300 }}
+                  sx={{ width: 200, height:200 }}
                   image={`http://localhost:3000/productos/imagenes/${item.foto}`}
                   alt={item.nombre_producto}
                 />
