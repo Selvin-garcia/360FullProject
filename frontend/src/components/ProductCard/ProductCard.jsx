@@ -18,11 +18,12 @@ export default function MultiActionAreaCard({ producto, handleAddToCart }) {
         navigate(`/producto/${producto.idProducto}`); // Navigate to the user details page };
     }
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 300 }}>
       <CardActionArea onClick={handleNavigate}>
         <CardMedia
           component="img"
-          height="300"
+          height="250"
+          width="200"
           image={`http://localhost:3000/productos/imagenes/${producto.foto}`} // Usar imagen del producto dinámicamente
           alt={producto.nombre_producto || 'Imagen del Producto'} // Usar el nombre del producto como texto alternativo si está disponible
         />

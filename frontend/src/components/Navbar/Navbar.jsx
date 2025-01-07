@@ -35,6 +35,9 @@ export const Navbar = () => {
           <StyledButton component={Link} to="/" color='inherit'>
             Página Principal
           </StyledButton>
+          <StyledButton component={Link} to="/bebidas" color='inherit'>
+            Bebidas
+          </StyledButton>
           <StyledButton component={Link} to="/alimentos" color='inherit'>
             Alimentos
           </StyledButton>

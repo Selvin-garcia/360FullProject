@@ -6,6 +6,7 @@ import { Navbar } from "./components/Navbar/Navbar";
 import PieDePagina from "./components/PieDePagina/PieDePagina";
 import Home from "./Pages/Home";
 import CategoriaAlimentosPage from "./Pages/Alimentos";
+import CategoriaBebidasPage from "./Pages/Bebidas";
 import LoginPage from "./Pages/Login";
 import CartPage from "./Pages/Carrito";
 import OperadorPage from "./Pages/Operador";
@@ -38,6 +39,7 @@ const AppRoutes = () => {
             ) : (
               <>
                 <Route path="/home" element={<Home />} />
+                <Route path="/bebidas" element={< CategoriaBebidasPage />} />
                 <Route path="/alimentos" element={< CategoriaAlimentosPage />} />
 
                 <Route path="/producto/:idProducto" element={<DetalleProductos />} />
