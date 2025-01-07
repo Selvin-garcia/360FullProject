@@ -27,7 +27,7 @@ const Cart = ({ cartItems, onRemove, onUpdateQuantity, onCheckout }) => {
                     <Typography variant="body1">${item.precio}</Typography>
                     <Typography variant="body2" color="textSecondary">{item.marca}</Typography>
                     <Box sx={{ display: 'flex', alignItems: 'center', mt: 2 }}>
-                      <Typography variant="body2">Quantity:</Typography>
+                      <Typography variant="body2">Cantidad:</Typography>
                       <input
                         type="number"
                         value={item.quantity}
@@ -45,13 +45,13 @@ const Cart = ({ cartItems, onRemove, onUpdateQuantity, onCheckout }) => {
             </Grid>
           ))
         ) : (
-          <Typography variant="body1">Your cart is empty.</Typography>
+          <Typography variant="body1">El carrito esta vacio.</Typography>
         )}
       </Grid>
       {cartItems.length > 0 && (
         <Box sx={{ mt: 4 }}>
-          <Typography variant="h6">Total: ${calculateTotal()}</Typography>
-          <Button variant="contained" color="primary" onClick={onCheckout}>Proceed to Checkout</Button>
+          <Typography variant="h6">Total: Q{calculateTotal()}</Typography>
+          <Button variant="contained" color="primary" onClick={onCheckout}>Confirmacion de orden</Button>
         </Box>
       )}
     </Container>

@@ -30,7 +30,7 @@ const Login = () => {
       const usuario = respuesta.data;
       console.log(usuario);
       setUsuarios(usuario); // Update context with user data
-      navigate(usuario.id_role === 2 ? '/operador' : '/home');
+      navigate(usuario.id_role === 1 ? '/operador' : '/home');
     } catch (error) {
       setError('Contraseña invalida');
     }

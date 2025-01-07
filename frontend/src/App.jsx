@@ -21,11 +21,11 @@ const AppRoutes = () => {
 
   return (
     <>
-      {usuarios && usuarios.id_rol !== 2 && <Navbar />}
+      {usuarios && usuarios.id_rol !== 1 && <Navbar />}
       <Routes>
         {usuarios ? (
           <>
-            {usuarios.id_rol === 2 ? (
+            {usuarios.id_rol === 1 ? (
               <>
                 <Route path="/operador" element={
                   <OrdenesProvider> {/* Wrap OperadorPage with OrdersProvider */}
